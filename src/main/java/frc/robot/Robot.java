@@ -18,6 +18,8 @@ import com.revrobotics.CANSparkMax;
 // We add this line to enable us to call and new data type corresponding to the motor we are using
 import com.revrobotics.CANSparkLowLevel.MotorType;
 
+import edu.wpi.first.math.controller.PIDController;
+
 public class Robot extends TimedRobot {
 
   // We add this line to create a new instance of a joystick object connected to USB port 0
@@ -29,10 +31,13 @@ public class Robot extends TimedRobot {
   // We add this line to create a new instance of a "double" variable and set its value to 0
   double motor_control_input = 0.0;
 
+  PIDController exampleController = new PIDController(1.0, 0.0, 0.001);
+
   @Override
   public void robotInit() {
     // This is a good idea; it "resets" the Spark Max to factory default settings
     my_motor_controller.restoreFactoryDefaults();
+    exampleController.setSetpoint(5);
   }
 
   @Override
