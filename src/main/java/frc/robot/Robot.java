@@ -43,7 +43,7 @@ public class Robot extends TimedRobot {
 
   @Override
   public void teleopPeriodic() {
-    // set the motor controller input to the value of motor_control_input   -     test commit
+    // set the motor controller input to the value of motor_control_input
     my_motor_controller.setVoltage(motor_control_input);
   }
 }
